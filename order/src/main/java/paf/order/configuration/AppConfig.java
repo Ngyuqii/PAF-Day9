@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import static paf.order.model.Constants.*;
 
 @Configuration
 public class AppConfig {
@@ -23,5 +24,6 @@ public class AppConfig {
         MongoClient client = MongoClients.create(mongoUrl);
         return new MongoTemplate(client, DATABASE);
 
-    }  
+    }
+
 }

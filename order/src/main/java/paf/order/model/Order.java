@@ -10,29 +10,51 @@ public class Order {
     private String name;
     private String email;
     private Date deliveryDate;
-    private List<LineItem> lineItems = new LinkedList<>();
+    private List<LineItem> itemsList = new LinkedList<>();
 
-    public String getOrderid() { return orderId; }
-    public void setOrderid(String orderId) { this.orderId = orderId; }
+    //Getters
+    public String getOrderId() {
+        return orderId;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public Date getDeliveryDate() {
+        return deliveryDate;
+    }
+    public List<LineItem> getItemsList() {
+        return itemsList;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public Date getDeliveryDate() { return deliveryDate; }
-    public void setDeliveryDate(Date deliveryDate) { this.deliveryDate = deliveryDate; }
-
-    public List<LineItem> getLineItems() { return lineItems; }
-    public void setLineItems(List<LineItem> lineItems) { this.lineItems = lineItems; }
+    //Setters
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public void setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+    public void setItemsList(List<LineItem> itemsList) {
+        this.itemsList = itemsList;
+    }
+    
+    //Method to add a lineItem (item and quantity) into itemsList
     public void addItem(LineItem lineItem) {
-        lineItems.add(lineItem);
+        itemsList.add(lineItem);
     }
 
     @Override
     public String toString() {
         return "Order [name=" + name + ", email=" + email + ", deliveryDate=" 
-			  + deliveryDate + ", lineItems=" + lineItems + "]";
+			  + deliveryDate + ", lineItems=" + itemsList + "]";
     }
+
 }
